@@ -34,6 +34,9 @@ namespace GithubRepos
         /// </summary>
         private void InitializeComponent()
         {
+            Bitmap shester = new Bitmap("Shester.png");
+            FormSetings = new Setings();
+
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             this.Load += Form1_Load;
@@ -65,6 +68,20 @@ namespace GithubRepos
             timer = new Timer();
             timer.Tick += Timer_Tick;
 
+            this.Btn_Setings = new Button();
+            this.Btn_Setings.Size = new Size(50,50);
+            this.Btn_Setings.Location = new Point(this.Width-this.Btn_Setings.Size.Width,0);
+            this.Btn_Setings.BackgroundImage= shester;
+            this.Btn_Setings.BackgroundImageLayout = ImageLayout.Stretch;
+            this.Btn_Setings.Click += Btn_Setings_Click;
+
+            this.Controls.Add(Btn_Setings);
+
+        }
+
+        private void Btn_Setings_Click(object sender, EventArgs e)
+        {
+            FormSetings.ShowDialog();
         }
 
         private void Timer_Tick(object sender, EventArgs e)
@@ -150,6 +167,9 @@ namespace GithubRepos
 
         #endregion
         private Timer timer;
+        private Button Btn_Setings;
+        private Setings FormSetings;
+
         private System.Windows.Forms.Label label1;
     }
 }
