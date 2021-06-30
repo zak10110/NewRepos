@@ -1,4 +1,6 @@
-﻿namespace GithubRepos
+﻿using System.Windows.Forms;
+
+namespace GithubRepos
 {
     partial class Setings
     {
@@ -32,8 +34,42 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Text = "Setings";
+            this.FontColor = new Button();
+            this.FontColor.Size = new System.Drawing.Size(100,50);
+            this.FontColor.Location = new System.Drawing.Point(this.Width/2-this.FontColor.Size.Width,this.Height/2-this.FontColor.Size.Height);
+            this.FontColor.Text = "Font Color";
+            this.FontColor.Click += FontColor_Click;
+
+            this.BackColor = new Button();
+            this.BackColor = new Button();
+            this.BackColor.Size = new System.Drawing.Size(100, 50);
+            this.BackColor.Location = new System.Drawing.Point(this.Width / 2 - this.FontColor.Size.Width, this.Height / 2);
+            this.BackColor.Text = "Back Color";
+            this.BackColor.Click += BackColor_Click;
+
+            this.Controls.Add(FontColor);
+            this.Controls.Add(BackColor);
+
         }
 
+        private void FontColor_Click(object sender, System.EventArgs e)
+        {
+            ColorDialog FontColor = new ColorDialog();
+
+
+
+
+        }
+
+        private void BackColor_Click(object sender, System.EventArgs e)
+        {
+            ColorDialog BackColor = new ColorDialog();
+
+
+        }
+
+        private Button FontColor;
+        private Button BackColor;
         #endregion
     }
 }
