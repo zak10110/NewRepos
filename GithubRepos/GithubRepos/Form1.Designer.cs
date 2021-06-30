@@ -1,5 +1,6 @@
 ﻿
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace GithubRepos
@@ -45,7 +46,10 @@ namespace GithubRepos
             this.label1.Size = new System.Drawing.Size(478, 182);
             this.label1.TabIndex = 0;
             this.label1.Text = "";
+            this.label1.BackColor = Color.DarkCyan;
+            this.label1.ForeColor = Color.Aquamarine;
             this.label1.Click += new System.EventHandler(this.label1_Click);
+
             // 
             // Form1
             // 
@@ -54,6 +58,7 @@ namespace GithubRepos
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.label1);
             this.DoubleBuffered = true;
+            this.FormBorderStyle = FormBorderStyle.None;
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
